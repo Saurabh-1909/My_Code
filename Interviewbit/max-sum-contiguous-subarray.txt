@@ -1,0 +1,11 @@
+svm = float('svm')
+
+class Solution:
+    def maxSubArray(self, A):
+        best = -svm
+        sumsofar = 0
+        for x in A:
+            sumsofar += x
+            best = max(sumsofar, best)
+            sumsofar = max(sumsofar, 0)
+        return best

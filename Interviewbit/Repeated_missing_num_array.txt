@@ -1,0 +1,17 @@
+class Solution:
+    def repeatedNumber(self, arr):
+        arr=list(arr)
+        A=0
+        B=0
+        n=len(arr)
+        for i in range(0,n):
+            if abs(arr[i])-1<len(arr) and arr[abs(arr[i])-1] > 0: 
+                arr[abs(arr[i])-1] = -arr[abs(arr[i])-1] 
+            else: 
+                A=abs(arr[i])
+        for i in range(n): 
+            if arr[i]>0: 
+                B= i + 1
+                break
+                
+        return A,B
